@@ -15,6 +15,11 @@
 <nav class="bg-blue-950 p-4">
 	<ul class="flex gap-2 items-center justify-start">
 		<li>
+			<a href="/" class="text-white">
+				Home
+			</a>
+		</li>
+		<li>
 			<a href="/geolocation" class="px-4 py-1 rounded-lg bg-white">Geolocation API</a>
 		</li>
 	</ul>

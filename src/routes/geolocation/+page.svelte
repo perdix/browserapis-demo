@@ -54,12 +54,12 @@
 </script>
 
 <div class="w-full h-full p-4 flex flex-col gap-4">
-    <h1 class="text-4xl">Geolocation API</h1>
+    <h1 class="text-xl">Geolocation API</h1>
 
     <section class="bg-white rounded-4xl p-4 flex flex-col gap-4">
 
         <div class="flex justify-between items-center">
-            <h2 class="text-xl">getCurrentPosition()</h2>
+            <h2 class="text-lg">getCurrentPosition()</h2>
 
                 <button 
                     onclick={getLocation}
@@ -134,7 +134,7 @@
 
     <section class="bg-white rounded-4xl p-4 flex flex-col gap-4">
          <div class="flex justify-between items-center">
-            <h2 class="text-xl">watchPosition()</h2>
+            <h2 class="text-lg">watchPosition()</h2>
 
                 <button 
                     onclick={watchPosition}
