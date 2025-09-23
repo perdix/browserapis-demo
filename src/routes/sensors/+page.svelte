@@ -1,6 +1,7 @@
 <script>
-    let started   = $state(false);
     import { browser } from "$app/environment";
+
+    let isListening   = $state(false);
 
     let alpha = $state(null);  // 0..360 (Kompass)
     let beta  = $state(null);  // -180..180 (vor/zurück)
@@ -9,26 +10,22 @@
     // iOS erkennt man daran, dass requestPermission existiert
     const needsPerm = browser && (typeof window.DeviceOrientationEvent?.requestPermission === "function");
 
-
     function orient(e) {
         alpha = e.alpha;
         beta = e.beta;
         gamma = e.gamma;
-        console.log(e.absolute)
     }
 
     async function getOrientation() {
-
-
-        if (started) {
-            started = false;
+        if (isListening) {
+            isListening = false;
             alpha = null;
             beta = null;
             gamma = null;
             window.removeEventListener("deviceorientationabsolute", orient);
             return;
         } else {
-            started = true;
+            isListening = true;
         }
 
         if (needsPerm) {
@@ -57,7 +54,7 @@
                     class="bg-blue-500 text-white px-4 py-2 rounded cursor-pointer hover:bg-blue-600"
                     
                 >
-                    {started ? 'Stop' : 'Start'}
+                    {isListening ? 'Stop' : 'Start'}
                 </button>
         </div>
              
