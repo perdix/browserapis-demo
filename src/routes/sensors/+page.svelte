@@ -10,14 +10,15 @@
     const needsPerm = browser && (typeof window.DeviceOrientationEvent?.requestPermission === "function");
 
 
+    function orient(e) {
+        alpha = e.alpha;
+        beta = e.beta;
+        gamma = e.gamma;
+        console.log(e.absolute)
+    }
+
     async function getOrientation() {
 
-        function orient(e) {
-            alpha = e.alpha;
-            beta = e.beta;
-            gamma = e.gamma;
-            console.log(e.absolute)
-        }
 
         if (started) {
             started = false;
