@@ -26,15 +26,11 @@
     <section class="bg-white rounded-4xl p-4 flex flex-col gap-4">
         <h2>Device Orientation API</h2>
         
-        <details class="text-sm text-slate-600">
-        <summary class="cursor-pointer select-none">Technische Details</summary>
-        <ul class="list-disc ps-5 mt-2 space-y-1">
-            <li>α (alpha) – Rotation um Z-Achse → Kompassrichtung (0–360°)</li>
-            <li>β (beta) – Rotation um X-Achse → Neigung vor/zurück (−180..180)</li>
-            <li>γ (gamma) – Rotation um Y-Achse → Neigung links/rechts (−90..90)</li>
-            <li>Nur auf HTTPS und echten Mobilgeräten zuverlässig</li>
-        </ul>
-        </details>
+        <div class="text-sm text-slate-700 space-y-1">
+        <div><span class="font-medium">Alpha (α):</span> {alpha == null ? '–' : Math.round(alpha)}°</div>
+        <div><span class="font-medium">Beta (β):</span> {beta  == null ? '–' : Math.round(beta)}°</div>
+        <div><span class="font-medium">Gamma (γ):</span> {gamma == null ? '–' : Math.round(gamma)}°</div>
+      </div>
    
     </section>
 
