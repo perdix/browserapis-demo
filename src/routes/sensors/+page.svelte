@@ -24,7 +24,7 @@
             alpha = null;
             beta = null;
             gamma = null;
-            window.removeEventListener("deviceorientation", orient);
+            window.removeEventListener("deviceorientationabsolute", orient);
             return;
         } else {
             started = true;
