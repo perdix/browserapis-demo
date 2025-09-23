@@ -22,6 +22,9 @@
 		<li>
 			<a href="/geolocation" class="px-4 py-1 rounded-lg bg-white">Geolocation API</a>
 		</li>
+				<li>
+			<a href="/sensors" class="px-4 py-1 rounded-lg bg-white">Device API</a>
+		</li>
 	</ul>
 </nav>
 
