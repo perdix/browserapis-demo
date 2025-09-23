@@ -35,7 +35,7 @@
             if (resp !== "granted") return; 
         }
 
-        window.addEventListener("deviceorientation", orient);
+        window.addEventListener("deviceorientationabsolute", orient);
     }
 
 
