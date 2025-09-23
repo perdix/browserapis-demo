@@ -16,12 +16,15 @@
             alpha = e.alpha;
             beta = e.beta;
             gamma = e.gamma;
+            console.log(e.absolute)
         }
 
         if (started) {
             started = false;
             window.removeEventListener("deviceorientation", orient);
             return;
+        } else {
+            started = true;
         }
 
         if (needsPerm) {
@@ -29,7 +32,7 @@
             if (resp !== "granted") return; 
         }
 
-        window.addEventListener("deviceorientation", orient, {passive:true, absolute: true});
+        window.addEventListener("deviceorientation", orient);
     }
 
 
