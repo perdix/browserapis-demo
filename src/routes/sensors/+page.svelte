@@ -1,24 +1,39 @@
 <script>
-    let granted   = $state(false);
+    let started   = $state(false);
     import { browser } from "$app/environment";
 
     let alpha = $state(null);  // 0..360 (Kompass)
     let beta  = $state(null);  // -180..180 (vor/zurück)
     let gamma = $state(null);  // -90..90 (links/rechts)
 
-    $effect(() => {
-            if (!browser || !granted) return;
-           
+    // iOS erkennt man daran, dass requestPermission existiert
+    const needsPerm = browser && (typeof window.DeviceOrientationEvent?.requestPermission === "function");
 
-            const onOrient = (e) => {
-                alpha = e.alpha;
-                beta  = e.beta;
-                gamma = e.gamma;
-            };
 
-            window.addEventListener('deviceorientation', onOrient, { passive: true });
-            return () => window.removeEventListener('deviceorientation', onOrient);
-  });
+    async function getOrientation() {
+
+        function orient(e) {
+            alpha = e.alpha;
+            beta = e.beta;
+            gamma = e.gamma;
+        }
+
+        if (started) {
+            started = false;
+            window.removeEventListener("deviceorientation", orient);
+            return;
+        }
+
+        if (needsPerm) {
+            const resp = await window.DeviceOrientationEvent.requestPermission();
+            if (resp !== "granted") return; 
+        }
+
+        window.addEventListener("deviceorientation", orient);
+    }
+
+
+
    
 </script>
 
@@ -28,6 +43,17 @@
 
     <section class="bg-white rounded-4xl p-4 flex flex-col gap-4">
         <h2>Device Orientation API</h2>
+
+        <div>
+             <button 
+                    onclick={getOrientation}
+                    class="bg-blue-500 text-white px-4 py-2 rounded cursor-pointer hover:bg-blue-600"
+                    
+                >
+                    {started ? 'Stop' : 'Start'}
+                </button>
+        </div>
+             
         
         <div class="text-sm text-slate-700 space-y-1">
         <div><span class="font-medium">Alpha (α):</span> {alpha == null ? '–' : Math.round(alpha)}°</div>
