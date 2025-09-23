@@ -21,6 +21,9 @@
 
         if (started) {
             started = false;
+            alpha = null;
+            beta = null;
+            gamma = null;
             window.removeEventListener("deviceorientation", orient);
             return;
         } else {
