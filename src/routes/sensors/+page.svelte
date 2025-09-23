@@ -1,9 +1,12 @@
 <script>
+    let granted   = $state(false);
+    import { browser } from "$app/environment";
+
     let alpha = $state(null);  // 0..360 (Kompass)
     let beta  = $state(null);  // -180..180 (vor/zurück)
     let gamma = $state(null);  // -90..90 (links/rechts)
 
-      $effect(() => {
+    $effect(() => {
             if (!browser || !granted) return;
            
 
