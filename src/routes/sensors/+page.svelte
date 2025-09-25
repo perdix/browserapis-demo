@@ -24,7 +24,7 @@
 		rotation = e.rotationRate;
 	}
 
-	async function getOrientation() {
+	function getOrientation() {
 		if (isOrientationListening) {
 			isOrientationListening = false;
 			alpha = null;
@@ -38,7 +38,7 @@
 		window.addEventListener('deviceorientationabsolute', orient);
 	}
 
-	async function getMotion() {
+	function getMotion() {
 		if (isMotionListening) {
 			isMotionListening = false;
 			acceleration = null;
