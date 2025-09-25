@@ -34,8 +34,9 @@
 			return;
 		} else {
 			isOrientationListening = true;
+            window.addEventListener('deviceorientationabsolute', orient);
 		}
-		window.addEventListener('deviceorientationabsolute', orient);
+		
 	}
 
 	function getMotion() {
@@ -47,8 +48,9 @@
 			window.removeEventListener('devicemotion', motion);
 		} else {
 			isMotionListening = true;
+            window.addEventListener('devicemotion', motion);
 		}
-		window.addEventListener('devicemotion', motion);
+		
 	}
 </script>
 
