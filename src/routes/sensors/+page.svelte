@@ -64,7 +64,7 @@
 				onclick={getOrientation}
 				class="cursor-pointer rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
 			>
-				{isOrientaionListening ? 'Stop' : 'Start'}
+				{isOrientationListening ? 'Stop' : 'Start'}
 			</button>
 		</div>
 
