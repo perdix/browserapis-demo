@@ -1,7 +1,7 @@
 <script>
 	import { browser } from '$app/environment';
 
-	let isOrientaionListening = $state(false);
+	let isOrientationListening = $state(false);
 	let isMotionListening = $state(false);
 
 	let alpha = $state(null); // 0..360 (Kompass)
