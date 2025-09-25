@@ -9,28 +9,22 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-<div class="wrapper min-h-screen bg-blue-100 flex flex-col">
+<div class="wrapper flex min-h-screen flex-col bg-blue-100">
+	<nav class="bg-blue-950 p-4">
+		<ul class="flex items-center justify-start gap-2">
+			<li>
+				<a href="/" class="text-white"> Home </a>
+			</li>
+			<li>
+				<a href="/geolocation" class="rounded-lg bg-white px-4 py-1">Geolocation API</a>
+			</li>
+			<li>
+				<a href="/sensors" class="rounded-lg bg-white px-4 py-1">Device API</a>
+			</li>
+		</ul>
+	</nav>
 
-
-<nav class="bg-blue-950 p-4">
-	<ul class="flex gap-2 items-center justify-start">
-		<li>
-			<a href="/" class="text-white">
-				Home
-			</a>
-		</li>
-		<li>
-			<a href="/geolocation" class="px-4 py-1 rounded-lg bg-white">Geolocation API</a>
-		</li>
-				<li>
-			<a href="/sensors" class="px-4 py-1 rounded-lg bg-white">Device API</a>
-		</li>
-	</ul>
-</nav>
-
-<main class="grow">
-	{@render children?.()}
-</main>
+	<main class="grow">
+		{@render children?.()}
+	</main>
 </div>
-
-
