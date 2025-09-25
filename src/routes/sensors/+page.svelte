@@ -31,7 +31,6 @@
 			beta = null;
 			gamma = null;
 			window.removeEventListener('deviceorientationabsolute', orient);
-			return;
 		} else {
 			isOrientationListening = true;
             window.addEventListener('deviceorientationabsolute', orient);
