@@ -94,6 +94,7 @@
 		<div class="space-y-1 text-sm text-slate-700">
 			<div>
 				<span class="font-medium">Acceleration:</span>
+                <br>
 				{#if acceleration}
 					x: {Math.round(acceleration.x * 100) / 100} m/s², y: {Math.round(acceleration.y * 100) /
 						100} m/s², z: {Math.round(acceleration.z * 100) / 100} m/s²
@@ -103,6 +104,7 @@
 			</div>
 			<div>
 				<span class="font-medium">Acceleration (inkl. Gravitation):</span>
+                <br>
 				{#if accelerationGravity}
 					x: {Math.round(accelerationGravity.x * 100) / 100} m/s², y: {Math.round(
 						accelerationGravity.y * 100
@@ -113,6 +115,7 @@
 			</div>
 			<div>
 				<span class="font-medium">Rotation Rate:</span>
+                <br>
 				{#if rotation}
 					alpha: {Math.round(rotation.alpha * 100) / 100} °/s, beta: {Math.round(
 						rotation.beta * 100
