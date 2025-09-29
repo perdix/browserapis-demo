@@ -26,6 +26,21 @@
 			alert('Share API wird von diesem Browser nicht unterstützt.');
 		}
 	}
+
+	async function notify() {
+		if ('Notification' in window) {
+			if (Notification.permission === 'granted') {
+				new Notification('Hallo! Das ist eine Benachrichtigung.');
+			} else if (Notification.permission !== 'denied') {
+				let permission = await Notification.requestPermission();
+				if (permission === 'granted') {
+					new Notification('Danke! Du wirst jetzt benachrichtigt.');
+				}
+			}
+		} else {
+			alert('Notification API wird von diesem Browser nicht unterstützt.');
+		}
+	}
 </script>
 
 <div class="flex h-full w-full flex-col gap-4 p-4">
@@ -57,6 +72,17 @@
 
 
 			<button onclick={share} class="border p-2 cursor-pointer">Share</button>
+		</div>
+
+
+	</section>
+
+		<section class="flex flex-col gap-4 rounded-4xl bg-white p-4">
+		<div class="flex items-center justify-between">
+			<h2 class="text-lg">Notification API</h2>
+
+
+			<button onclick={notify} class="border p-2 cursor-pointer">Notifiy me</button>
 		</div>
 
 
