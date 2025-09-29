@@ -19,7 +19,10 @@
 				<a href="/geolocation" class="rounded-lg bg-white px-4 py-1">Geolocation API</a>
 			</li>
 			<li>
-				<a href="/sensors" class="rounded-lg bg-white px-4 py-1">Device API</a>
+				<a href="/sensors" class="rounded-lg bg-white px-4 py-1">Device APIs</a>
+			</li>
+			<li>
+				<a href="/daten" class="rounded-lg bg-white px-4 py-1">Daten APIs</a>
 			</li>
 		</ul>
 	</nav>
