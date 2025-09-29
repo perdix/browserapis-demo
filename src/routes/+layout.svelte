@@ -11,7 +11,7 @@
 
 <div class="wrapper flex min-h-screen flex-col bg-blue-100">
 	<nav class="bg-blue-950 p-4">
-		<ul class="flex items-center justify-start gap-2">
+		<ul class="flex items-center justify-start gap-2 flex-col sm:flex-row">
 			<li>
 				<a href="/" class="text-white"> Home </a>
 			</li>

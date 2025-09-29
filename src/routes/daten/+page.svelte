@@ -82,7 +82,7 @@
 			<h2 class="text-lg">Notification API</h2>
 
 
-			<button onclick={notify} class="border p-2 cursor-pointer">Notifiy me</button>
+			<button onclick={notify} class="border p-2 cursor-pointer">Notify me</button>
 		</div>
 
 
